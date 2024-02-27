@@ -1,54 +1,36 @@
 import React, { useState } from 'react';
+import posts from "./blog-post.json";
+import Link from 'next/link';
 
-interface Person {
-  name: string;
-  age: number;
-}
-
-const people: Person[] = [
-  { name: 'Alice', age: 25 },
-  { name: 'Bob', age: 30 },
-  { name: 'Charlie', age: 20 },
-];
-
-const About: React.FC = () => {
-  const [sortBy, setSortBy] = useState<string>('name');
-
-  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortBy(event.target.value);
-  };
-
-  const sortedPeople = [...people].sort((a, b) => {
-    if (sortBy === 'name') {
-      return a.name.localeCompare(b.name);  
-    } else if (sortBy === 'age') {
-      return a.age - b.age;
-    }
-    return 0;
-  });
-
+const About = () => {
+  
   return (
-    <main className="main">
-      <select value={sortBy} onChange={handleSortChange}>
-        <option value="name">Sort by name</option>
-        <option value="age">Sort by age</option>
-      </select>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedPeople.map((person : Person) => (
-            <tr key={person.name}>
-              <td>{person.name}</td>
-              <td>{person.age}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <main className="main" >
+        <section id="feed">
+          <div className="container">
+            <ul>
+              {posts.map((post, i) => (
+                <li key={i}>
+                  
+                    <div className="card">
+                      <div className="card-body">
+                        <h5 className="card-title"> {post.title}</h5>
+                        <p className="card-text">
+                          Some quick example text to build on the card title and
+                          make up the bulk of the cards content.
+                        </p>
+
+                        <Link href={`/blog/${post.id}`}  className="btn btn-primary">  
+                          {post.title}
+                        </Link>
+                      </div>
+                    </div>
+                  
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
     </main>
   );
 };

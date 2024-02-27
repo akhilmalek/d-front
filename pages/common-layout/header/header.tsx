@@ -6,13 +6,14 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Link from 'next/link'
 
+
 function Header() {
   return (
     <div className="header">
       <Navbar collapseOnSelect expand="lg">
         <Container>
           <Navbar.Brand href="/home" className="logo">
-            Design kit
+            {/* Design kit */}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse
@@ -57,9 +58,13 @@ function Header() {
               <Link href="/" className="nav-link">
                 Home
               </Link>
-             
+
+              <Link href="/product/product"  replace={false} className="nav-link">
+                Product
+              </Link>
+
             </Nav>
-            
+
           </Navbar.Collapse>
         </Container>
       </Navbar>
