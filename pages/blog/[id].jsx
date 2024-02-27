@@ -47,11 +47,11 @@ let found = getUserById(id);
 
       <div className="container">
 
-        <iframe style={{width: "100%", height: "500px"}} title="Toggle Hide and Show" src="https://codepen.io/webdev-gmail/embed/yLQVNwx?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+        {/* <iframe style={{width: "100%", height: "500px"}} title="Toggle Hide and Show" src="https://codepen.io/webdev-gmail/embed/yLQVNwx?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
           See the Pen <a href="https://codepen.io/webdev-gmail/pen/yLQVNwx">
           Toggle Hide and Show</a> by webdev (<a href="https://codepen.io/webdev-gmail">@webdev-gmail</a>)
           on <a href="https://codepen.io">CodePen</a>.
-        </iframe>
+        </iframe> */}
 
       </div>    
     </div>

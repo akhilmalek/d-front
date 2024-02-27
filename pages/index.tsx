@@ -30,12 +30,12 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [error, setError] = useState(null);
 
-  const handleOpenModal = (id : any) => {
-    const getUserById = (userID : any) => {
+  const handleOpenModal = (id : number) => {
+    const getUserById = (userID : number) => {
       return users.find(user => user.id === userID);
     };
 
-    let found : any = getUserById(id);
+    let found: any | undefined = getUserById(id);
     setShowdata(found);
   
   };
@@ -369,7 +369,7 @@ export default function Home() {
      
       </main>
 
-      <Modal
+      {/* <Modal
         show={show}
         onHide={handleClose}
         backdrop="static"
@@ -402,7 +402,7 @@ export default function Home() {
           </Button>
           <Button variant="primary">Next</Button>
         </Modal.Footer>
-      </Modal>
+      </Modal> */}
     </>
   );
 }
