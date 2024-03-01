@@ -305,22 +305,23 @@ export default function Home() {
               </div>
             </div>
 
-            <div>
-              <div>
-                <h2> Single Item</h2>
-              </div>
-            </div>
+        
           </div>
         </section>
 
         <section className="card-section overflow-hidden">
           <div className="container">
+            <div className="mt-3 mb-3">
+              <div>
+                <h4>Single Item |<small> Trending</small></h4>
+              </div>
+            </div>
             <div className="position-relative">
               <div className="process-slider">
                 <Slider {...settings}>
                   {users.map((user, index) => {
                     return (
-                      <div className="card" key={index}>
+                      <div className="card card-new" key={index}>
                         <div className="card-img"></div>
                         <div className="card-body">
                           <h5 className="card-title">{user.username}</h5>

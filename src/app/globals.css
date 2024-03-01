@@ -769,7 +769,7 @@ section#feed ul li > div {
   height: 100%;
 }
 
-section#feed ul li > div .card {
+section#feed ul li > {
   height: 100%;
   border: 0 ;
   background-color: var(--bg-primary);
@@ -784,3 +784,37 @@ section#feed ul li > div:hover {opacity: 1 !important;
     z-index: 999;
 }
 
+.card-new {
+  border-color: #91c3f0 !important;
+  background-color: #edf6fe !important;
+  color: #222831;
+}
+
+.card-new p, .card-new ul li a {color: inherit !important;
+
+}
+
+/* .slick-slide:nth-child(1) div .card, .slick-slide:nth-child(6n) div .card {
+  background-color: #3498db; 
+  color: #ffffff; 
+}
+
+.slick-slide:nth-child(2) div .card, .slick-slide:nth-child(7n) div .card {
+  background-color: #27ae60; 
+  color: #ffffff; 
+}
+
+.slick-slide:nth-child(3) div .card, .slick-slide:nth-child(8n) div .card  {
+  background-color: #e74c3c; 
+  color: #ffffff; 
+}
+
+.slick-slide:nth-child(4) div .card, .slick-slide:nth-child(9n) div .card  {
+  background-color: #f39c12; 
+  color: #000000; 
+}
+
+.slick-slide:nth-child(5) div .card, .slick-slide:nth-child(10n) div .card  {
+  background-color: #8e44ad; 
+  color: #ffffff; 
+} */
