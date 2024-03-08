@@ -2,7 +2,7 @@
 
 :root .theme-light {
   --bg-primary: #fff;
-  --text-primary:#2b2b2b;
+  --text-primary:#130202;
   --bg-secondary: rgba(163, 211, 251,0.2);
   /* --bg-secondary: #FFF500; */
   --bg-tertiary:#edf6fe;
@@ -779,3 +779,12 @@ section#feed ul li > div:hover {opacity: 1 !important;
     z-index: 999;
 }
 
+.card-new {
+  border-color: #91c3f0!important;
+  background-color: #edf6fe!important;
+  color: #222831
+}
+
+.card-new p,.card-new ul li a {
+  color: inherit!important
+}
