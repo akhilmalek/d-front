@@ -20,7 +20,7 @@ export default function Blog() {
     };
 
     const [show, setShow] = useState(false);
-    const [modaldata , setShowdata] = useState<user>([]);
+    const [modaldata , setShowdata] = useState<user>();
     const handleClose = () => setShow(false);
 
     const [isLoading, setIsLoading] = useState(false);
