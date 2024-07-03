@@ -7,6 +7,8 @@ import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Card from "../componants/card/card";
+import ModalCard from "../componants/modal/modal";
 
 
 export default function Blog() {
@@ -51,12 +53,14 @@ export default function Blog() {
         pauseOnHover: true,
     };
 
+
     type menu = {
         name: string;
         link: any;
         sub: any;
     };
 
+    // menu
     const menus: menu[] = [
         {
             name: "England",
@@ -86,6 +90,8 @@ export default function Blog() {
         },
     ];
 
+    // menu end
+
     const fetchData: any = () => {
         setIsLoading(true);
         axios
@@ -101,6 +107,7 @@ export default function Blog() {
             });
     };
 
+    // sorting
     const [sortKey, setSortKey] = useState("");
 
     const handleSortChange = (e: any) => {
@@ -129,6 +136,30 @@ export default function Blog() {
             setUsers(sortedItems);
         }
     };
+    // sorting end
+
+    // new modal
+    const [showModal, setShowModal] = useState(false);
+    const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
+    const [showModalData , setShowModalData] = useState<user>();
+    const handleOpenModalCard = (id: number) => {
+        setSelectedUserId(id);
+        setShowModal(true);
+        const getUserById = (id: number) => {
+            return users.find((user) => user.id === id);
+        };
+
+        let found: any = getUserById(id);
+        setShowModalData(found);
+      };
+    
+      const handleCloseModalCard = () => {
+        setShowModal(false);
+        setSelectedUserId(null);
+      };
+
+    // end new modal
+
 
     useEffect(() => {
         fetchData();
@@ -207,9 +238,6 @@ export default function Blog() {
                                             />
                                         </div>
                                         <div className="col-lg-4">
-                                            {/* <button onClick={handleSortChange}>
-                        Sort {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
-                      </button> */}
                                             <select
                                                 id="sortSelect"
                                                 className="form-select"
@@ -228,7 +256,7 @@ export default function Blog() {
                                             <LoadingSpinner />
                                         ) : (
                                             <>
-                                                {users.length > 0 && (
+                                             {users.length > 0 && (
                                                     <div className="row ">
                                                         {users
                                                             .filter((user: user) => {
@@ -246,59 +274,31 @@ export default function Blog() {
                                                             })
                                                             .map((user: user, index: number) => {
                                                                 return (
-                                                                    <div
-                                                                        className="col-lg-4 col-md-6 col-sm-6 mb-4"
-                                                                        key={index}
-                                                                    >
-                                                                        {/* <div className="card" onClick={() => { setShow(true); } }> */}
-                                                                        <div
-                                                                            className="card"
-                                                                            onClick={() => {
-                                                                                handleOpenModal(user.id);
-                                                                                setShow(true);
-                                                                            }}
-                                                                        >
-                                                                            <div className="card-img">
-                                                                                {/* <img
-                                            src="https://mir-s3-cdn-cf.behance.net/projects/404/5779e0133762633.Y3JvcCwxMTkyLDkzMywxMTIsMA.jpg"
-                                            className="card-img-top"
-                                            alt="..."
-                                          /> */}
-                                                                            </div>
-
-                                                                            <div className="card-body">
-                                                                                <h5 className="card-title">
-                                                                                    {user.username}
-                                                                                </h5>
-                                                                                <p className="card-text mb-2">
-                                                                                    {user.email}
-                                                                                </p>
-                                                                                <p className="card-text">
-                                                                                    {user.website}
-                                                                                </p>
-
-                                                                                <ul>
-                                                                                    <li>
-                                                                                        <a href="#!">Item</a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a href="#!">Item</a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a href="#!">Item</a>
-                                                                                    </li>
-                                                                                </ul>
-
-                                                                                <Link href={`/blog/${user.id}`}>
-                                                                                    {user.id}
-                                                                                </Link>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                );
-                                                            })}
-                                                    </div>
-                                                )}
+                                                                  <div
+                                                                    className="col-lg-4 col-md-6 col-sm-6 mb-4"
+                                                                    key={index}
+                                                                  >
+                                                                    <Card
+                                                                      name={
+                                                                        user.username
+                                                                      }
+                                                                      email={
+                                                                        user.email
+                                                                      }
+                                                                      website={
+                                                                        user.website
+                                                                      }
+                                                                      number={
+                                                                        user.id
+                                                                      }
+                                                                      onClick={() => handleOpenModalCard(user.id)}
+                                                                    />
+                                                                  </div>
+                                                                );}
+                                                            )
+                                                        }
+                                                        </div>
+                                             )}
                                             </>
                                         )}
                                     </div>
@@ -314,7 +314,7 @@ export default function Blog() {
                 </div>
             </section>
 
-            <section className="card-section overflow-hidden">
+            <section className="card-section overflow-hidden d-none">
                 <div className="container">
                     <div className="position-relative">
                         <div className="process-slider">
@@ -351,40 +351,21 @@ export default function Blog() {
                 </div>
             </section>
 
-            <Modal
-                show={show}
-                onHide={handleClose}
-                backdrop="static"
-                keyboard={false}
-                fullscreen={"xl-down"}
-                size="xl"
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title>
-                        Hello! <strong>{modaldata?.name}</strong>
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <p>
-                        <strong>Name : </strong>
-                        {modaldata?.id}
-                    </p>
-                    <p>
-                        <strong>Email : </strong>
-                        {modaldata?.email}
-                    </p>
-                    <p>
-                        <strong>Email : </strong>
-                        {modaldata?.website}
-                    </p>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button variant="primary">Next</Button>
-                </Modal.Footer>
-            </Modal>
+
+            <ModalCard show={showModal} handleClose={handleCloseModalCard} name={showModalData?.username}>
+                        <p>
+                            <strong>Name : </strong>
+                            {showModalData?.id}
+                        </p>
+                        <p>
+                            <strong>Email : </strong>
+                            {showModalData?.email}
+                        </p>
+                        <p>     
+                            <strong>Website : </strong>
+                            {showModalData?.website}
+                        </p>
+            </ModalCard>
         </>
     );
 }

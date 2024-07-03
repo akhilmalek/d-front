@@ -34,16 +34,15 @@ let found = getUserById(id);
      
   return (
     
-    <div style={{paddingTop: "100px"}}>
- 
-    <div className="container">
-      <p>{found?.username}</p>
-      <p>{found?.website}</p>
-      <p>{found?.email}</p>
-      <p>{found?.address.street}</p>
-      <p>{found?.phone}</p>
-      <p>{found?.company.name}</p>
-    </div>
+    <div>
+      <div className="container">
+        <p>{found?.username}</p>
+        <p>{found?.website}</p>
+        <p>{found?.email}</p>
+        <p>{found?.address.street}</p>
+        <p>{found?.phone}</p>
+        <p>{found?.company.name}</p>
+      </div>
 
       <div className="container">
 
