@@ -6,20 +6,14 @@ interface ModalProps {
   show: boolean;
   handleClose: () => void;
   children: React.ReactNode;
-  name: string;
 }
 
-const ModalCard: React.FC<ModalProps> = ({ show, handleClose, children, name }) => {
-  return (
-    // <div className={show ? styles.modalDisplayBlock : styles.modalDisplayNone}>
-    //   <section className={styles.modalMain}>
-    //     {children}
-    //     <button type="button" onClick={handleClose}>
-    //       Close
-    //     </button>
-    //   </section>
-    // </div>
+const ModalCard: React.FC<ModalProps> = ({ show, handleClose, children }) => {
+  if (!show) {
+    return null;
+  }
 
+  return (
     <Modal
       show={show}
       onHide={handleClose}
@@ -29,13 +23,9 @@ const ModalCard: React.FC<ModalProps> = ({ show, handleClose, children, name }) 
       size="xl"
     >
       <Modal.Header closeButton>
-        <Modal.Title>
-          Hello! <strong>{name}</strong>
-        </Modal.Title>
+        <Modal.Title>Hello!</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        {children}
-      </Modal.Body>
+      <Modal.Body>{children}</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
           Close

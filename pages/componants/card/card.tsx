@@ -9,14 +9,15 @@ interface CardProps {
   website: string;
   number: number;
   onClick: () => void;
+  className: any;
 }
 
 
 const items = ["Item", "Item", "Item"];
 
-const Card: React.FC<CardProps> = ({ name, email, website, number, onClick }) => {
+const Card: React.FC<CardProps> = ({ className, name, email, website, number, onClick }) => {
   return (
-    <><div className={styles.card} onClick={onClick}>
+    <><div className={`${styles.card} ${styles[className]}`} onClick={onClick}>
       <div className={styles.cardimg}>
         {/* <img
           src="https://mir-s3-cdn-cf.behance.net/projects/404/5779e0133762633.Y3JvcCwxMTkyLDkzMywxMTIsMA.jpg"

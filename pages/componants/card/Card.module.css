@@ -92,3 +92,17 @@
         rgb(35 35 35 / 5%) 0px 64px 64px;
     transform: translate(0, -4px);
 }
+
+
+.cardnew {
+    border: 1px solid #91c3f0!important;
+    background-color: #edf6fe!important;
+    color: #222831;
+    min-width: 300px;
+  }
+  
+  .cardnew p, .cardnew ul li a {
+    color: inherit!important;
+  }
+
+  .cardnew div span { background-color: #fff !important;}
