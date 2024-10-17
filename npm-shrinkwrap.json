@@ -2697,6 +2697,13 @@
       "resolved": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz",
       "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
     },
+    "node_modules/jquery": {
+      "version": "3.7.1",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz",
+      "integrity": "sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==",
+      "license": "MIT",
+      "peer": true
+    },
     "node_modules/js-sdsl": {
       "version": "4.4.0",
       "resolved": "https://registry.npmjs.org/js-sdsl/-/js-sdsl-4.4.0.tgz",
@@ -4681,7 +4688,8 @@
     "acorn-jsx": {
       "version": "5.3.2",
       "resolved": "https://registry.npmjs.org/acorn-jsx/-/acorn-jsx-5.3.2.tgz",
-      "integrity": "sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ=="
+      "integrity": "sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==",
+      "requires": {}
     },
     "aggregate-error": {
       "version": "3.1.0",
@@ -4841,7 +4849,8 @@
     "bootstrap": {
       "version": "5.2.3",
       "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-5.2.3.tgz",
-      "integrity": "sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ=="
+      "integrity": "sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==",
+      "requires": {}
     },
     "brace-expansion": {
       "version": "1.1.11",
@@ -5469,7 +5478,8 @@
     "eslint-plugin-react-hooks": {
       "version": "4.6.0",
       "resolved": "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz",
-      "integrity": "sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g=="
+      "integrity": "sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==",
+      "requires": {}
     },
     "eslint-scope": {
       "version": "7.1.1",
@@ -6112,6 +6122,12 @@
       "resolved": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz",
       "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
     },
+    "jquery": {
+      "version": "3.7.1",
+      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.7.1.tgz",
+      "integrity": "sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==",
+      "peer": true
+    },
     "js-sdsl": {
       "version": "4.4.0",
       "resolved": "https://registry.npmjs.org/js-sdsl/-/js-sdsl-4.4.0.tgz",
@@ -6721,7 +6737,8 @@
     "react-table": {
       "version": "7.8.0",
       "resolved": "https://registry.npmjs.org/react-table/-/react-table-7.8.0.tgz",
-      "integrity": "sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA=="
+      "integrity": "sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==",
+      "requires": {}
     },
     "react-transition-group": {
       "version": "4.4.5",
@@ -6855,7 +6872,8 @@
     "slick-carousel": {
       "version": "1.8.1",
       "resolved": "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.8.1.tgz",
-      "integrity": "sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA=="
+      "integrity": "sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==",
+      "requires": {}
     },
     "source-map-js": {
       "version": "1.0.2",
